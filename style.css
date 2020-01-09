@@ -1,0 +1,69 @@
+/* * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+ } */
+
+body {
+    background-color: #caecad;
+    display: flex;
+    box-sizing: border-box;
+}
+
+header {
+    display: block;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.table {
+    box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    border: solid;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 450px;
+    height: auto;
+    position: relative;
+    top: 220px;
+    right: 0px;
+}
+
+.card {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+    height: 100px;
+    width: 100px;
+}
+
+#ranking {
+    display: none;
+    border: 1px solid;
+    border-collapse: collapse;
+    position: absolute;
+    top: 270px;
+    left: 100px;
+}
+
+th,
+td {
+    border: 1px solid;
+    text-align: left;
+    padding: 8px;
+}
+
+.win h1 {
+    position: relative;
+    top: 120px;
+    left: 180px;
+}

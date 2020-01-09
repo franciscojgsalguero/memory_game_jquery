@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+    <title>Pc2 Memory Game</title>
+</head>
+
+<body>
+    <header>
+        <h1>Memory Game</h1>
+
+        <p>Select the difficulty</p>
+        <select>
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
+        </select>
+        <p>Write your nickname <input type="text" name="nick"></p>
+        <button onclick="setDifficulty()">Submit</button>
+    </header>
+    <main>
+        <table id="ranking">
+            <tr>
+                <th>Nickname</th>
+                <th>Points</th>
+            </tr>
+            <tr>
+                <td id="nick"></td>
+                <td id="puntos"></td>
+            </tr>
+            <tr>
+                <td>Mario</td>
+                <td>193</td>
+            </tr>
+            <tr>
+                <td>Luigi</td>
+                <td>177</td>
+            </tr>
+        </table>
+    </main>
+
+
+</body>
+
+</html>
