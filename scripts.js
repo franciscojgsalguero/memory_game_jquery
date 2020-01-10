@@ -34,14 +34,16 @@ var shuffle = function(images) {
 //Aquesta funció ens reparteix les cartes al tauler
 function shuffleCards(images) {
     var main = $("main")[0];
+    // Aqui sustituyo el método createElement por un método jquery (Add Remove)
     var table = $("<div></div>");
+    // Aqui uso un método para manipular clases (Classes)
     $(table).addClass("table");
 
     //En el cas de que el joc estigui en el mode difícil, canviam el width per a que quedi més "a lo ample"
     if (images.length == 24 || images.length == 16) {
         $(table).width("900px");
     }
-
+    // Aqui sustituyo el método createElement por un método jquery (Add Remove)
     $(table).appendTo(main);
 
     // Cream cada carta amb un bucle que depen de la llargària de l'array d'imatges.
@@ -51,8 +53,10 @@ function shuffleCards(images) {
         $(card).addClass("card");
         //La carta tendrá un event onclick on se crida a la funció flipCard on i serà l'id de l'imatge i la posició de l'imatge
         //dins l'array
+        // Aqui uso jquery para un tratar un evento (Events)
         $(card).attr("onclick", "flipCard(" + i + ", \"" + images[i] + "\")");
         var img = $("<img>");
+        // Aqui uso el método .css per cambiar el width y el height (CSS)
         $(img).attr({src:"./images/box.jpg", id:"id" + i}).css({"width":"auto", "height": "100px"});
         $(card).appendTo(table);
         $(img).appendTo(card);
@@ -68,6 +72,7 @@ function flipCard(i, image) {
     //de la funció unflip està en marxa.
     if (!tablelock) {
         var oldimg = document.getElementById("id" + i);
+        // Aqui uso un Chaining (Chaining)
         $(oldimg).attr("src", image).addClass("flipped");
         matching();
     }
@@ -76,6 +81,7 @@ function flipCard(i, image) {
 //Matching comproba, sempre que hi hagi dues cartes amb la classe "flipped", si les imatges són iguals o no. Si és
 //la primera carta girada, hi passa de llarg, només entra a les condicions quan hi ha dues cartes girades.
 function matching() {
+    // Aqui uso selectors jquery (Selectors)
     var flippedcards = $(".flipped");
     if (flippedcards.length == 2) {
         //Si les cartes tenen la mateixa imatge, li canvia la classe a "match" i li lleva l'onclick per no poder
@@ -97,6 +103,7 @@ function matching() {
             //unflip, que el que farà és tornar a girar les cartes.
             tablelock = true;
             puntos -= 10;
+            // Aqui uso FadeIn y FadeOut (Efectes)
             $(flippedcards).fadeOut(1000);
             setTimeout(function() { unflip(flippedcards); $(flippedcards).fadeIn(500);}, 1000);
 
@@ -130,6 +137,7 @@ function final(main, table) {
     $(h1).appendTo(victory);
     $(img).appendTo(victory);
     rank();
+    // Aqui uso un animate per a moure de posició la imatge de Mario quan guanyes (JQuery Animation Efectes)
     $(img).animate({height: '400px', opacity: '0.4'}, "slow").animate({width: '400px', opacity: '0.8'}, "slow");
     $(img).animate({height: '607px', opacity: '0.4'}, "slow").animate({width: '470px', opacity: '0.8'}, "slow");
 }
@@ -170,6 +178,7 @@ function rank() {
 function setDifficulty() {
     var difficulty = $("select")[0].value;
     reset();
+    // Aqui uso el hide para ocultar la cabecera (hide Efectes)
     $("header").hide();
 
     switch (difficulty) {
